@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tennis_Track.Forme;
 
 namespace Tennis_Track
 {
@@ -16,7 +17,12 @@ namespace Tennis_Track
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+
+            // ------- za verziju bez Logina --------
+            Application.Run(new GlavniIzbornik());
+
+            // -------- za normalnu verziju ---------
+            //Application.Run(new LoginForm());
         }
     }
 }

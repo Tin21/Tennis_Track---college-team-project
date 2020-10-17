@@ -30,6 +30,13 @@ namespace Tennis_Track.Forme
 
         private void GlavniIzbornik_Load(object sender, EventArgs e)
         {
+            //   ---- za verziju bez Logina ----
+               using (var db = new TennisTrackEntities())
+            {
+                PrijavaClana.PrijavljeniCLan = (from k in db.Clan select k).FirstOrDefault();
+            }
+            //  ------------------------------------
+
             lblImePrezimeKorisnika.Text = "Trenutno ste prijavljeni kao" + Environment.NewLine + PrijavaClana.PrijavljeniCLan.Ime + " " + PrijavaClana.PrijavljeniCLan.Prezime;
             lblImePrezimeKorisnika.BackColor = System.Drawing.Color.Transparent;
             if (PrijavaClana.PrijavljeniCLan.TipClana == "Admin")
